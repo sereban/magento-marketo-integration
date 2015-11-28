@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_system_config_edit>
+        <reference name="head">
+            <action method="addJs">
+                <file>marketo/mapping/fields.js</file>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="hoosh_marketo/system_config_mapping_testConnection" name="marketo.test.connection"/>
+        </reference>
+    </adminhtml_system_config_edit>
+    <!--Test Connection-->
+    <hoosh_marketo_system_config_edit>
+        <reference name="content">
+            <block type="hoosh_marketo/system_config_mapping_testConnection" name="marketo.test.connection"/>
+        </reference>
+        <reference name="left">
+            <block type="adminhtml/system_config_switcher" name="adminhtml.system.config.switcher" before="-"/>
+        </reference>
+    </hoosh_marketo_system_config_edit>
+
+    <adminhtml_marketo_attribute_import>
+        <reference name="content">
+            <block type="hoosh_marketo/adminhtml_attribute_import_container" name="attribute.import.container"/>
+        </reference>
+    </adminhtml_marketo_attribute_import>
+
+    <default>
+        <reference name="before_body_end">
+            <block type="hoosh_marketo/template" name="adminhtml.marketo.munchkin.code" template="marketo/core/munchkin.phtml"/>
+        </reference>
+        <reference name="notifications">
+            <block type="hoosh_marketo/template" name="empty_credentials_notification" template="marketo/nofitications/credentials.phtml"/>
+        </reference>
+    </default>
+</layout>

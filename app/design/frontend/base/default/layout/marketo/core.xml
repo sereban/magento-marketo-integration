@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <default>
+        <reference name="head">
+            <action ifconfig="marketo_config/hooshmarketo_enabling_status/autocomplete_fields" method="addItem">
+                <type>skin_js</type><name>marketo/core/js/aggregator.js</name>
+            </action>
+            <action method="addItem"><type>skin_css</type><name>marketo/core/css/marketo.css</name><params/></action>
+        </reference>
+        <reference name="before_body_end">
+            <block type="hoosh_marketo/template" name="marketo_field_aggregator" template="marketo/core/field/aggregator.phtml"/>
+            <block type="hoosh_marketo/template" name="adminhtml.marketo.munchkin.code" template="marketo/core/munchkin.phtml"/>
+        </reference>
+    </default>
+
+    <sync_billing>
+        <reference name="head">
+            <action method="addItem" ifconfig="marketo_config/hooshmarketo_enabling_status/enabling">
+                <type>skin_js</type>
+                <name>marketo/core/js/syncBilling.js</name>
+            </action>
+            <action method="addItem" ifconfig="marketo_config/hooshmarketo_enabling_status/compact_address_fields">
+                <type>skin_js</type>
+                <name>marketo/core/js/compactCheckout.js</name>
+            </action>
+        </reference>
+    </sync_billing>
+
+    <customer_account_create>
+        <update handle="sync_billing"/>
+    </customer_account_create>
+
+    <checkout_onepage_index>
+        <update handle="sync_billing"/>
+    </checkout_onepage_index>
+
+    <onestepcheckout_index_index>
+        <update handle="sync_billing"/>
+    </onestepcheckout_index_index>
+</layout>

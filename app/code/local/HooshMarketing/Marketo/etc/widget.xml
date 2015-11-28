@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<widgets>
+    <marketo_lead_attribute type="hoosh_marketo/widget_attribute">
+        <name>Lead Attribute</name>
+        <description type="desc">Adds a lead attribute</description>
+        <parameters>
+            <field_name>
+                <required>1</required>
+                <label>Lead Attribute</label>
+                <type>select</type>
+                <visible>1</visible>
+                <values>
+                    <firstname>
+                        <value>FirstName</value>
+                        <label>First Name</label>
+                    </firstname>
+                    <lastname>
+                        <value>LastName</value>
+                        <label>Last Name</label>
+                    </lastname>
+                    <email>
+                        <value>Email</value>
+                        <label>Email</label>
+                    </email>
+                    <score>
+                        <value>Score</value>
+                        <label>Lead Score</label>
+                    </score>
+                    <city>
+                        <value>City</value>
+                        <label>City</label>
+                    </city>
+                    <postcode>
+                        <value>PostCode</value>
+                        <label>Postal Code</label>
+                    </postcode>
+                    <country>
+                        <value>Country</value>
+                        <label>Country</label>
+                    </country>
+                    <phone>
+                        <value>Phone</value>
+                        <label>Phone</label>
+                    </phone>
+                    <Address>
+                        <value>Address</value>
+                        <label>Address</label>
+                    </Address>
+                    <id>
+                        <value>id</value>
+                        <label>Id</label>
+                    </id>
+                    <quotes>
+                        <value>MagentoSalesQuotes</value>
+                        <label>Magento Sales Quotes</label>
+                    </quotes>
+                    <company>
+                        <value>Company</value>
+                        <label>Company</label>
+                    </company>
+                    <state>
+                        <value>region_id</value>
+                        <label>State</label>
+                    </state>
+                </values>
+            </field_name>
+            <default translate="label description">
+                <visible>1</visible>
+                <label>Default Output Text</label>
+                <description>If empty, this value will be used</description>
+                <type>text</type>
+            </default>
+        </parameters>
+    </marketo_lead_attribute>
+    <marketo_lead_content type="hoosh_marketo/widget_content">
+        <name>Lead Content Block</name>
+        <description type="desc">Adds a lead block content</description>
+        <parameters>
+            <field_name>
+                <required>1</required>
+                <label>Lead Attribute</label>
+                <type>select</type>
+                <visible>1</visible>
+                <values>
+                    <firstname>
+                        <value>FirstName</value>
+                        <label>First Name</label>
+                    </firstname>
+                    <lastname>
+                        <value>LastName</value>
+                        <label>Last Name</label>
+                    </lastname>
+                    <email>
+                        <value>Email</value>
+                        <label>Email</label>
+                    </email>
+                    <score>
+                        <value>Score</value>
+                        <label>Lead Score</label>
+                    </score>
+                    <city>
+                        <value>City</value>
+                        <label>City</label>
+                    </city>
+                    <postcode>
+                        <value>PostCode</value>
+                        <label>Postal Code</label>
+                    </postcode>
+                    <country>
+                        <value>Country</value>
+                        <label>Country</label>
+                    </country>
+                    <phone>
+                        <value>Phone</value>
+                        <label>Phone</label>
+                    </phone>
+                    <Address>
+                        <value>Address</value>
+                        <label>Address</label>
+                    </Address>
+                    <id>
+                        <value>id</value>
+                        <label>Id</label>
+                    </id>
+                    <quotes>
+                        <value>MagentoSalesQuotes</value>
+                        <label>Magento Sales Quotes</label>
+                    </quotes>
+                    <company>
+                        <value>Company</value>
+                        <label>Company</label>
+                    </company>
+                    <state>
+                        <value>region_id</value>
+                        <label>State</label>
+                    </state>
+                </values>
+            </field_name>
+            <field_value translate="label description">
+                <visible>1</visible>
+                <label>Attribute values to apply</label>
+                <description>For multiple values use comma</description>
+                <type>text</type>
+            </field_value>
+            <block_id type="complex" translate="label description">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Block</label>
+                <description>This block is used when field matches the values</description>
+                <type>label</type>
+                <helper_block>
+                    <type>adminhtml/cms_block_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Block...</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>20</sort_order>
+            </block_id>
+            <default_block_id type="complex" translate="label description">
+                <visible>1</visible>
+                <required>0</required>
+                <label>Default Block</label>
+                <description>This block is used when field does not match the values</description>
+                <type>label</type>
+                <helper_block>
+                    <type>adminhtml/cms_block_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Block...</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>30</sort_order>
+            </default_block_id>
+        </parameters>
+    </marketo_lead_content>
+    <popup_list type="popup/list" translate="name description" module="popup">
+        <name>Popup Newsletters</name>
+        <description>Adds newsletters into popup</description>
+        <parameters>
+            <template translate="label">
+                <label>Frontend Template</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>select</type>
+                <values>
+                    <template1 translate="label">
+                        <value>marketo/popup/newsletter1.phtml</value>
+                        <label>Default template</label>
+                    </template1>
+                    <template2 translate="label">
+                        <value>marketo/popup/newsletter2.phtml</value>
+                        <label>Template 2</label>
+                    </template2>
+                    <template3 translate="label">
+                        <value>marketo/popup/newsletter3.phtml</value>
+                        <label>Template 3</label>
+                    </template3>
+                </values>
+            </template>
+            <button_text translate="label">
+                <label>Button text</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>text</type>
+                <description>Leave empty for default "Subscribe".</description>
+            </button_text>
+            <button_color translate="label">
+                <label>Button color</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>text</type>
+                <description>Leave empty for default value.</description>
+            </button_color>
+            <thanks_msg translate="label">
+                <label>Thank you message</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>text</type>
+                <description>Message that will be shown once user subscribe.</description>
+            </thanks_msg>
+        </parameters>
+    </popup_list>
+</widgets>

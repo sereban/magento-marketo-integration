@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <marketo>
+            <title>Marketo</title>
+            <sort_order>41</sort_order>
+            <children>
+                <attribute>
+                    <title>Attribute</title>
+                    <sort_order>1</sort_order>
+                    <children>
+                        <import>
+                            <title>Import</title>
+                            <action>*/marketo_attribute/import</action>
+                        </import>
+                    </children>
+                </attribute>
+            </children>
+        </marketo>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <marketo_config module="hoosh_marketo">
+                                        <title>Marketo</title>
+                                        <sort_order>0</sort_order>
+                                    </marketo_config>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

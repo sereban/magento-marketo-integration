@@ -1,0 +1,89 @@
+<style>#canvas {background-color: black;  color: green; margin-bottom: 10px; height: auto;  }</style>
+<?php echo Mage::getStoreConfig("design/footer/marketo_footer"); ?>
+<script>
+    document.observe("dom:loaded", function() {
+        var MarketoTestDebug = Class.create();
+
+        MarketoTestDebug.prototype = {
+            initialize: function() {
+                this.canvas = $('canvas');
+                this.canvas.innerHTML = "";
+                this.connectionTestUrl = '<?php echo $this->getTestConnectionUrl(); ?>';
+                this.workTestUrl = '<?php echo $this->getWorkTestUrl(); ?>';
+            },
+            addLine: function(messageType, message) {
+                this.canvas.innerHTML += messageType + " : " + message + "<br>";
+            },
+            addLastEmptyLine: function() {
+                this.canvas.innerHTML += "<br>";
+            },
+            flushLines: function() {
+                this.canvas.innerHTML = "";
+            },
+            connectionTest: function() {
+                this.flushLines();
+                this.addLine("Test", "Starting");
+                new Ajax.Request(this.connectionTestUrl, {
+                    onSuccess: function (transport) {
+                        var response = transport.responseText.evalJSON();
+
+                        if (response[0]["status"] != "UPDATED" && response[0]["status"] != "CREATED") {
+                            this.handleResponse(response[0], false);
+                        } else {
+                            this.addLine("Status", "Success");
+                            this.addLine("Response time", response[0]["diffTime"] + " seconds");
+                        }
+
+                    }.bind(this)
+                });
+            },
+
+            handleResponse: function(responseChunk, useMethod) {
+                this.addLine("Status", responseChunk["status"]);
+                if(useMethod) //handle method
+                    this.addLine("Method", responseChunk["method"]);
+                /** Handle error message */
+                if(responseChunk["errMessage"] && responseChunk["errMessage"].length !=0) {
+                    this.addLine("Error Message", responseChunk["errMessage"]);
+                    this.addLine("Error", responseChunk["message"]);
+                }
+
+                this.addLine("Response time", responseChunk["diffTime"] + " seconds");
+            },
+
+            workTest: function(param) {
+                this.flushLines();
+                this.addLine("Test", "Starting");
+
+                new Ajax.Request(this.workTestUrl+"?type="+param, {
+                    onSuccess: function (transport) {
+                        var response = transport.responseText.evalJSON();
+
+                        if(response[0]) {
+                            for(i=0; i<response.length; i++) {
+                                this.handleResponse(response[i], true);
+                                this.addLastEmptyLine();
+                            }
+                        } else {
+                            this.addLine("Status", "No Requests");
+                            this.addLine("Time", 0);
+                        }
+                    }.bind(this),
+                    onFailure: function() {
+                        alert("Cannot execute request!");
+                    }
+                });
+            }
+
+        };
+
+        var mtb = new MarketoTestDebug();
+
+
+
+        $('test_connection').observe("click", function(e) {e.preventDefault(); mtb.connectionTest(); e.preventDefault();e.stopImmediatePropagation(); });
+        $('lead_test').observe("click", function(e) {e.preventDefault(); mtb.workTest("lead"); e.preventDefault(); e.stopImmediatePropagation();});
+        $('opp_test').observe("click", function(e) {e.preventDefault(); mtb.workTest("opportunity"); e.preventDefault(); e.stopImmediatePropagation();});
+    })
+
+</script>

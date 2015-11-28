@@ -1,0 +1,19 @@
+<?php
+/**
+ * @class HooshMarketing_Marketo_Block_Template
+ * @var $this HooshMarketing_Marketo_Block_Template
+ */
+
+?>
+<script>
+
+    if(window["AggregatorLead"] && AggregatorLead) {
+        var lead = new AggregatorLead('<?php echo addslashes($this->getAggregatorItems()); ?>');
+        lead.processFields();
+    }
+
+    if(window["MarketoSyncBilling"] && MarketoSyncBilling) {
+        var marketoSyncBilling = new MarketoSyncBilling('<?php echo Mage::getUrl("hooshmarketing"); ?>');
+        marketoSyncBilling.onDomLoad(); //on load all document event
+    }
+</script>

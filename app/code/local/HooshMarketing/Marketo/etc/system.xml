@@ -1,0 +1,494 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <marketo module="hoosh_marketo">
+            <label>Marketo</label>
+            <sort_order>1</sort_order>
+        </marketo>
+    </tabs>
+
+    <sections>
+        <marketo_config module="hoosh_marketo">
+            <class>seperator-top</class>
+            <label>Marketo Configuration</label>
+            <sort_order>2</sort_order>
+            <tab>marketo</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <hooshmarketo_enabling_status>
+                    <label>Marketo Module Settings</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <sort_order>1</sort_order>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabling>
+                            <label>Enable Module</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </enabling>
+                        <enable_url_rewrites>
+                            <label>Enable Url Rewrites</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>5</sort_order>
+                        </enable_url_rewrites>
+                        <history_sync_enabling>
+                            <label>Enable history Synchronize</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </history_sync_enabling>
+                        <autocomplete_fields>
+                            <label>Autocomplete Fields</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>6</sort_order>
+                        </autocomplete_fields>
+                        <compact_address_fields>
+                            <label>Hide Address Fields on checkout</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>6</sort_order>
+                        </compact_address_fields>
+                        <enable_personalize_sorting>
+                            <label>Enable Personalize Category Sorting</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>6</sort_order>
+                        </enable_personalize_sorting>
+                    </fields>
+                    <sort_order>0</sort_order>
+                </hooshmarketo_enabling_status>
+                <marketo_credentials>
+                    <label>API Credentials</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>2</sort_order>
+                    <fields>
+                        <munckin_code>
+                            <label>Munckin Code</label>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </munckin_code>
+                        <soapEndpoint>
+                            <label>Soap End Point</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </soapEndpoint>
+                        <namespace>
+                            <label>Namespace</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>2</sort_order>
+                        </namespace>
+                        <userId>
+                            <label>User Id</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>3</sort_order>
+                        </userId>
+                        <secretKey>
+                            <label>Secret Key</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>4</sort_order>
+                        </secretKey>
+                        <timeZone>
+                            <label>TimeZone</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>5</sort_order>
+                        </timeZone>
+                        <debugSoapResponse>
+                            <label>Debug Soap Response</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>6</sort_order>
+                        </debugSoapResponse>
+                    </fields>
+                </marketo_credentials>
+                <marketo_opportunity_hardcode_fields>
+                    <label>Marketo Opportunity Defaults</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <sort_order>3</sort_order>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <default_stage>
+                            <label>Default Stage</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </default_stage>
+                        <lead_source>
+                            <label>Lead Source Data</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </lead_source>
+                        <remove_stage>
+                            <label>Removed Stage</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </remove_stage>
+                        <remove_amount>
+                            <label>Removed Amount</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </remove_amount>
+                        <purchase_stage>
+                            <label>Purchase Stage</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </purchase_stage>
+                        <purchase_probability>
+                            <label>Purchase Probability</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </purchase_probability>
+                        <last_viewed_stage>
+                            <label>Last Viewed Stage</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </last_viewed_stage>
+                    </fields>
+                </marketo_opportunity_hardcode_fields>
+                <cache_life_time>
+                    <label>Cache Lifetime</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <sort_order>3</sort_order>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <life_time>
+                            <label>Cache lifetime (sec)</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </life_time>
+                    </fields>
+                </cache_life_time>
+                <marketo_field_mapping>
+                    <label>Configuration of synchronize fields</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>4</sort_order>
+                    <fields>
+                        <map_field>
+                            <label>Fields to synchronize</label>
+                            <frontend_model>hoosh_marketo/system_config_mapping_attribute</frontend_model>
+                            <backend_model>hoosh_marketo/system_config_mapping_attribute_save</backend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                            <comment>Product must have higher priority then Quote Item: if you place two
+                                similar objects with similar marketo fields, you should first enter Product and then
+                                Quote Item
+                            </comment>
+                        </map_field>
+                        <use_non_priority_objects>
+                            <label>Using non priority objects</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                            <comment>For example use data from customer when user subscribes</comment>
+                        </use_non_priority_objects>
+                        <test_connection>
+                            <label>Test connection</label>
+                            <frontend_model>hoosh_marketo/system_config_mapping_testConnection</frontend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </test_connection>
+                    </fields>
+                </marketo_field_mapping>
+                <marketo_aggregator>
+                    <label>Marketo Autocompleting Fields</label>
+                    <show_in_default>999</show_in_default>
+                    <show_in_website>999</show_in_website>
+                    <show_in_store>999</show_in_store>
+                    <sort_order>5</sort_order>
+                    <fields>
+                        <mapping>
+                            <label>Field to Autocomplete</label>
+                            <frontend_model>hoosh_marketo/system_config_mapping_aggregator</frontend_model>
+                            <backend_model>hoosh_marketo/system_config_mapping_save</backend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>2</sort_order>
+                        </mapping>
+                    </fields>
+                </marketo_aggregator>
+                <template_switching>
+                    <label>Template Switching</label>
+                    <show_in_default>999</show_in_default>
+                    <show_in_website>999</show_in_website>
+                    <show_in_store>999</show_in_store>
+                    <sort_order>5</sort_order>
+                    <fields>
+                        <stores>
+                            <label>Template Name</label>
+                            <frontend_model>hoosh_marketo/system_config_mapping_template</frontend_model>
+                            <backend_model>hoosh_marketo/system_config_mapping_save</backend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>2</sort_order>
+                        </stores>
+                    </fields>
+                </template_switching>
+                <category_settings>
+                    <label>Product Category Scoring</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>6</sort_order>
+                    <fields>
+                        <scoring_categories>
+                            <label>Category Mapping</label>
+                            <frontend_model>hoosh_marketo/system_config_mapping_category</frontend_model>
+                            <backend_model>hoosh_marketo/system_config_mapping_save</backend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>3</sort_order>
+                        </scoring_categories>
+                        <map_top_field>
+                            <label>Top Category Marketo Field</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>hoosh_marketo/lead</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </map_top_field>
+                        <score_add_to_cart>
+                            <label>Product Added To Cart</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>8</sort_order>
+                        </score_add_to_cart>
+                        <score_viewed>
+                            <label>Product Viewed</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>9</sort_order>
+                        </score_viewed>
+                        <score_purchased>
+                            <label>Product Purchased</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>10</sort_order>
+                        </score_purchased>
+                        <score_external_url>
+                            <label>External url proceed</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>10</sort_order>
+                        </score_external_url>
+                        <threshold>
+                            <label>Threshold</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>10</sort_order>
+                        </threshold>
+                    </fields>
+                </category_settings>
+                <frontend_settings>
+                    <label>Frontend Settings</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>16</sort_order>
+                    <fields>
+                        <welcome_message>
+                            <label>Welcome Message</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>6</sort_order>
+                        </welcome_message>
+                    </fields>
+                </frontend_settings>
+                <info>
+                    <label>Info</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>17</sort_order>
+                    <fields>
+                        <version>
+                            <label>Magento Version</label>
+                            <frontend_type>label</frontend_type>
+                            <frontend_model>hoosh_marketo/system_config_versionLabel</frontend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>6</sort_order>
+                        </version>
+                    </fields>
+                </info>
+                <cron_settings>
+                    <label>Cron Settings</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>16</sort_order>
+                    <fields>
+                        <inactivity_start_time>
+                            <label>Lead Inactivity Time From (minutes)</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </inactivity_start_time>
+                        <inactivity_end_time>
+                            <label>Lead Inactivity Time To (minutes)</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>2</sort_order>
+                        </inactivity_end_time>
+                    </fields>
+                </cron_settings>
+                <sync_keys>
+                    <label>Sync Magento-Marketo Keys</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>8</sort_order>
+                    <fields>
+                        <lead_quote_key>
+                            <label>Lead Quote Key</label>
+                            <source_model>hoosh_marketo/lead</source_model>
+                            <frontend_type>select</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>6</sort_order>
+                        </lead_quote_key>
+                        <opportunity_line_item_id_key>
+                            <label>Opportunity Line Item Id Key</label>
+                            <source_model>hoosh_marketo/opportunity</source_model>
+                            <frontend_type>select</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>6</sort_order>
+                        </opportunity_line_item_id_key>
+                        <lead_newsletter_subscribe_key>
+                            <label>Lead Newsletter subscribe Key</label>
+                            <source_model>hoosh_marketo/lead</source_model>
+                            <frontend_type>select</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>6</sort_order>
+                        </lead_newsletter_subscribe_key>
+                        <opportunity_sales_order_key>
+                            <label>Lead Sales Order Key</label>
+                            <source_model>hoosh_marketo/lead</source_model>
+                            <frontend_type>select</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>6</sort_order>
+                        </opportunity_sales_order_key>
+                        <lead_inactivity_time_key>
+                            <label>Lead Inactivity Time Key</label>
+                            <source_model>hoosh_marketo/lead</source_model>
+                            <frontend_type>select</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>6</sort_order>
+                        </lead_inactivity_time_key>
+                    </fields>
+                </sync_keys>
+            </groups>
+        </marketo_config>
+    </sections>
+</config>

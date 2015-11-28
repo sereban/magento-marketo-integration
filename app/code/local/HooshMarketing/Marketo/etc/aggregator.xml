@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<default_fields>
+    <Email>email,Email,billing[email],login[username]</Email>
+    <Company>company,billing[company]</Company>
+    <FirstName>firstname,billing[firstname],FirstName</FirstName>
+    <LastName>lastname,billing[lastname],LastName</LastName>
+    <Phone>telephone,billing[telephone]</Phone>
+    <Address>street,billing[street]</Address>
+    <City>city,billing[city]</City>
+    <PostalCode>postcode,billing[postcode]</PostalCode>
+    <State>region_id,billing[region_id]</State>
+    <Country>country_id,billing[country_id]</Country>
+</default_fields>
